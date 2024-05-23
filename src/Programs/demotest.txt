@@ -1,0 +1,12 @@
+function check (a) {
+   if a == 3 {
+       return  "is equal to 3"
+   }
+   otherwise {
+       return a
+   }
+
+}
+
+setv a -> input()
+display check(a)

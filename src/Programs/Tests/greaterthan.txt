@@ -1,0 +1,8 @@
+setv x -> input()
+
+if x > 2 {
+    display x + " greater than 2"
+}
+otherwise {
+    display "not greater than 2"
+}

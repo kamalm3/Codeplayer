@@ -1,0 +1,10 @@
+setv x -> 4
+
+if x % 2 = 0 { 
+     setv m -> "not a prime number"
+}
+otherwise {  
+     setv m -> "prime"
+}
+
+display m

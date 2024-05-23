@@ -1,0 +1,13 @@
+setv x -> 1
+setv y -> 5
+display x + y
+
+if x > y{ 
+setv message -> "x is graeter than y"
+display message
+}
+otherwise{
+setv msge -> "y is greater than or equal to x"
+display msge
+}
+

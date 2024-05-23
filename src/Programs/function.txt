@@ -1,0 +1,10 @@
+function loop (x) {
+    setv i -> 1
+    while i < x {
+        display  i 
+        setv i -> i+1
+    }
+}
+
+setv x -> 10
+loop(x)

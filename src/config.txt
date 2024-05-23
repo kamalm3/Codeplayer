@@ -1,0 +1,4 @@
+Cursor sound : on
+Announcer sound : off
+Chosen Controller : 0
+Loaded Variable: None

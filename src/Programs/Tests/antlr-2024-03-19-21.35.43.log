@@ -1,0 +1,48 @@
+2024-03-19 21:35:42:012 grammar LogManager.java:25 before: (COMBINED_GRAMMAR SimpleLang (RULES (RULE program (BLOCK (ALT (+ (BLOCK (ALT statement)))))) (RULE statement (BLOCK (ALT expression (? (BLOCK (ALT NEWLINE)))) (ALT assignment (? (BLOCK (ALT NEWLINE)))) (ALT display (? (BLOCK (ALT NEWLINE)))) (ALT NEWLINE))) (RULE assignment (BLOCK (ALT 'setv' ID '->' expression))) (RULE display (BLOCK (ALT 'display' expression))) (RULE expression (BLOCK (ALT expression (BLOCK (ALT '+') (ALT '-')) expression) (ALT INT) (ALT STRING) (ALT ID) (ALT '(' expression ')'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [a-zA-Z])))))) (RULE INT (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE STRING (BLOCK (ALT '"' (* (BLOCK (ALT .))) '"'))) (RULE NEWLINE (BLOCK (ALT (? (BLOCK (ALT '\r'))) '\n'))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t])))) skip)))))
+2024-03-19 21:35:42:086 grammar LogManager.java:25 after: (COMBINED_GRAMMAR SimpleLang (RULES (RULE program (BLOCK (ALT (+ (BLOCK (ALT statement)))))) (RULE statement (BLOCK (ALT expression (? (BLOCK (ALT NEWLINE)))) (ALT assignment (? (BLOCK (ALT NEWLINE)))) (ALT display (? (BLOCK (ALT NEWLINE)))) (ALT NEWLINE))) (RULE assignment (BLOCK (ALT 'setv' ID '->' expression))) (RULE display (BLOCK (ALT 'display' expression))) (RULE expression (BLOCK (ALT expression (SET '+' '-') expression) (ALT INT) (ALT STRING) (ALT ID) (ALT '(' expression ')'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [a-zA-Z])))))) (RULE INT (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE STRING (BLOCK (ALT '"' (* (BLOCK (ALT .))) '"'))) (RULE NEWLINE (BLOCK (ALT (? (BLOCK (ALT '\r'))) '\n'))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t])))) skip)))))
+2024-03-19 21:35:42:179 grammar LogManager.java:25 after extract implicit lexer =(COMBINED_GRAMMAR SimpleLang (RULES (RULE program (BLOCK (ALT (+ (BLOCK (ALT statement)))))) (RULE statement (BLOCK (ALT expression (? (BLOCK (ALT NEWLINE)))) (ALT assignment (? (BLOCK (ALT NEWLINE)))) (ALT display (? (BLOCK (ALT NEWLINE)))) (ALT NEWLINE))) (RULE assignment (BLOCK (ALT 'setv' ID '->' expression))) (RULE display (BLOCK (ALT 'display' expression))) (RULE expression (BLOCK (ALT expression (SET '+' '-') expression) (ALT INT) (ALT STRING) (ALT ID) (ALT '(' expression ')')))))
+2024-03-19 21:35:42:180 grammar LogManager.java:25 lexer =(LEXER_GRAMMAR SimpleLangLexer (RULES (RULE T__0 (BLOCK (ALT 'setv'))) (RULE T__1 (BLOCK (ALT '->'))) (RULE T__2 (BLOCK (ALT 'display'))) (RULE T__3 (BLOCK (ALT '+'))) (RULE T__4 (BLOCK (ALT '-'))) (RULE T__5 (BLOCK (ALT '('))) (RULE T__6 (BLOCK (ALT ')'))) (RULE ID (BLOCK (ALT (+ (BLOCK (ALT [a-zA-Z])))))) (RULE INT (BLOCK (ALT (+ (BLOCK (ALT [0-9])))))) (RULE STRING (BLOCK (ALT '"' (* (BLOCK (ALT .))) '"'))) (RULE NEWLINE (BLOCK (ALT (? (BLOCK (ALT '\r'))) '\n'))) (RULE WS (BLOCK (LEXER_ALT_ACTION (ALT (+ (BLOCK (ALT [ \t])))) skip)))))
+2024-03-19 21:35:42:884 left-recursion LogManager.java:25 expression
+    :   ( {} INT<tokenIndex=79> 
+        | STRING<tokenIndex=83> 
+        | ID<tokenIndex=87> 
+        | '('<tokenIndex=91> expression<tokenIndex=93> ')'<tokenIndex=95> 
+        )
+        (
+          {precpred(_ctx, 5)}?<p=5> ('+'<tokenIndex=70>|'-'<tokenIndex=72>) expression<tokenIndex=75,p=6>
+        )*
+    ;
+2024-03-19 21:35:42:902 grammar LogManager.java:25 added: (RULE expression (BLOCK (ALT (BLOCK (ALT {} (INT (ELEMENT_OPTIONS (= tokenIndex 79)))) (ALT (STRING (ELEMENT_OPTIONS (= tokenIndex 83)))) (ALT (ID (ELEMENT_OPTIONS (= tokenIndex 87)))) (ALT ('(' (ELEMENT_OPTIONS (= tokenIndex 91))) (expression (ELEMENT_OPTIONS (= tokenIndex 93))) (')' (ELEMENT_OPTIONS (= tokenIndex 95))))) (* (BLOCK (ALT ({precpred(_ctx, 5)}? (ELEMENT_OPTIONS (= p 5))) (SET ('+' (ELEMENT_OPTIONS (= tokenIndex 70))) ('-' (ELEMENT_OPTIONS (= tokenIndex 72)))) (expression (ELEMENT_OPTIONS (= tokenIndex 75) (= p 6)))))))))
+2024-03-19 21:35:42:906 semantics LogManager.java:25 tokens={EOF=-1, T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, ID=8, INT=9, STRING=10, NEWLINE=11, WS=12}
+2024-03-19 21:35:42:907 semantics LogManager.java:25 strings={'setv'=1, '->'=2, 'display'=3, '+'=4, '-'=5, '('=6, ')'=7}
+2024-03-19 21:35:42:930 LL1 LogManager.java:25 
+DECISION 0 in rule program
+2024-03-19 21:35:42:930 LL1 LogManager.java:25 look=[{1, 3, 6, 8..11}, <EOF>]
+2024-03-19 21:35:42:930 LL1 LogManager.java:25 LL(1)? true
+2024-03-19 21:35:42:930 LL1 LogManager.java:25 
+DECISION 1 in rule statement
+2024-03-19 21:35:42:930 LL1 LogManager.java:25 look=[11, {<EOF>, 1, 3, 6, 8..11}]
+2024-03-19 21:35:42:931 LL1 LogManager.java:25 LL(1)? false
+2024-03-19 21:35:42:931 LL1 LogManager.java:25 
+DECISION 2 in rule statement
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 look=[11, {<EOF>, 1, 3, 6, 8..11}]
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 LL(1)? false
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 
+DECISION 3 in rule statement
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 look=[11, {<EOF>, 1, 3, 6, 8..11}]
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 LL(1)? false
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 
+DECISION 4 in rule statement
+2024-03-19 21:35:42:932 LL1 LogManager.java:25 look=[{6, 8..10}, 1, 3, 11]
+2024-03-19 21:35:42:933 LL1 LogManager.java:25 LL(1)? true
+2024-03-19 21:35:42:933 LL1 LogManager.java:25 
+DECISION 5 in rule expression
+2024-03-19 21:35:42:933 LL1 LogManager.java:25 look=[9, 10, 8, 6]
+2024-03-19 21:35:42:933 LL1 LogManager.java:25 LL(1)? true
+2024-03-19 21:35:42:933 LL1 LogManager.java:25 
+DECISION 6 in rule expression
+2024-03-19 21:35:42:933 LL1 LogManager.java:25 look=[null, null]
+2024-03-19 21:35:42:934 LL1 LogManager.java:25 LL(1)? false
+2024-03-19 21:35:42:994 action-translator LogManager.java:25 translate 
+2024-03-19 21:35:42:997 action-translator LogManager.java:25 translate precpred(_ctx, 5)
+2024-03-19 21:35:42:999 action-translator LogManager.java:25 translate precpred(_ctx, 5)

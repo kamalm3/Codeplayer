@@ -1,0 +1,10 @@
+function add () {
+     setv x -> 2
+     setv y -> 6
+     display x + y
+}
+
+
+
+
+add()

@@ -1,0 +1,6 @@
+setv a -> 2
+setv y -> input()
+
+if y > a {
+    display "y is greater than a"
+}

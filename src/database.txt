@@ -1,0 +1,14 @@
+setv x -> 10
+setv z -> 5
+"hello"
+function loop () {}
+"not greater than 3"
+"greater than 3"
+3
+setv n -> input()
+setv s -> "hello"
+setv i -> 1
+setv x -> 10
+"times"
+setv i -> i+1
+setv y -> 3

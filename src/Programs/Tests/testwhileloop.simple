@@ -1,0 +1,7 @@
+setv i -> 1
+setv a -> 10
+
+while i < a {
+    display i
+    setv i -> i + 1
+}

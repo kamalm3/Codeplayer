@@ -1,0 +1,10 @@
+function add (x, y) {
+    
+
+     return x + y
+}
+setv x -> 10
+setv y -> input("type number ")
+
+display add(x, y)
+

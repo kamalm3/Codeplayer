@@ -1,0 +1,9 @@
+setv x -> 1
+setv r -> 5
+setv m -> "hello" 
+
+while x < r { 
+display x + m
+setv x -> x+1
+
+}

@@ -1,0 +1,6 @@
+setv x -> 1
+
+while x < 10 {
+     display x
+     setv x -> x + 0.5 * 0.1
+}

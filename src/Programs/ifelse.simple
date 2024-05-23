@@ -1,0 +1,8 @@
+setv n -> input()
+
+if n > 3 {
+    display "greater than 3"
+}
+otherwise {
+    display "not greater than 3"
+}

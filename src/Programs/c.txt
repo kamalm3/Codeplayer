@@ -1,0 +1,3 @@
+setv c -> 1 
+
+display c

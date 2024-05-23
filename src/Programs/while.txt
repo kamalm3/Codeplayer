@@ -1,0 +1,8 @@
+setv i -> 1 
+
+setv x -> 10
+
+while i < x {
+    display i + "times"
+    setv i -> i+1
+}

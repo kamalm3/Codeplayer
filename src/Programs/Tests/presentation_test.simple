@@ -1,0 +1,17 @@
+function add (x) {
+     if x > 2{
+         return "is odd"
+     }
+     otherwise {
+         return "is even"
+     }
+
+}
+setv x -> 9
+setv i -> 1
+
+while i < x {
+    setv t -> i
+    display t
+    setv i -> i + 1
+}

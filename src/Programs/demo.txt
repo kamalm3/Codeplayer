@@ -1,0 +1,8 @@
+function check (x) {
+    if x > 2{
+        return  "greater than 2"
+    }
+}
+
+setv x -> input()
+display check(x)

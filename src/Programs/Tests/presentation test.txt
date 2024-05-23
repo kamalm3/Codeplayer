@@ -1,0 +1,18 @@
+function check (x) {
+    if x % 2 != 0 {
+        return "prime"
+    } 
+    otherwise {
+        display "not prime"
+    }
+
+}
+
+setv ipt -> input()
+setv i -> 1
+
+while i < ipt {
+    check(i)
+    setv i -> i + 1
+}
+

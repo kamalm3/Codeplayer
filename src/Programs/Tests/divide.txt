@@ -1,0 +1,7 @@
+setv x -> 5
+
+display x % 2 
+
+
+
+
